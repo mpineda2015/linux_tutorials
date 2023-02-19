@@ -12,8 +12,8 @@ and change folder into it:
 `cd lammps_Cu_lattpar`
 now when you  run the command `pwd` you should see that you are in this folder. 
 2. let us copy the Cu we made in  [MD model creation](../MD_Model_Creation/MD model creation.md)  to this folder, assuming it is on the same level: 
-`cp ../MD\ model\ creation/4105040.lmp .`
-note that the `..` refers to the parent folder, and the `\ ` that is backslash and a space is the space character in unix, and the last ` . ` is a shortcut for the current folder, i.e., we do a copy (cp) of the file `4105040.lmp` from the path: `../MD\ model\ creation/4105040` to the current folder. 
+`cp ../MD_model_creation/4105040.lmp .`
+note that the `..` refers to the parent folder, and the `\ ` that is backslash and a space is the space character in unix, and the last ` . ` is a shortcut for the current folder, i.e., we do a copy (cp) of the file `4105040.lmp` from the path: `../MD_model_creation/` to the current folder. 
 
 3. Now we could use our favorite method (`nano`, `vi` or `winscp`,  `mobaxterm` etc) to create an input file for LAMMPS, but it is tedious to create it from scratch, so we use this one as a reference, from the LAMMPS example folder (see  [[lammps_getting_started]]). This is a good way to start a LAMMPS input file in general. 
 	1. tip check the lammps/examples/Readme file to check what examples are available. 
@@ -59,7 +59,7 @@ Below we will have to change the lines marked with L1, L2, and L3 to reflect the
 
 4. Let us find and download an interatomic potential from the NIST repository [NIST Interatomic Potential Repository](https://www.ctcms.nist.gov/potentials/)
 	1. we choose the CuTa potential (a newer version of the one we have seen in the first MD lecture). 
-	2. It contains Cu-Cu, Cu-Ta and Ta-Ta interactions, we will only use now the Cu-Cu interactions. Note, that one should always test the properties for known properties, especially if we are using a binary alloy potential for one element, as the fitting process may have preferred the CU-Ta interaction over the Cu-Cu or Ta-Ta as one in these systems is more focused on the interfaces or alloys, but this potential is known to have good representation of each of the phases. But we will test it now for simple property, the lattice parameter. 
+	2. It contains Cu-Cu, Cu-Ta and Ta-Ta interactions, we will only use now the Cu-Cu interactions. Note, that one should always test the properties for known properties, especially if we are using a binary alloy potential for one element, as the fitting process may have preferred the Cu-Ta interaction over the Cu-Cu or Ta-Ta as one in these systems is more focused on the interfaces or alloys, but this potential is known to have good representation of each of the phases. But we will test it now for simple property, the lattice parameter. 
 5. change the inout file so that 
 	1. L1 is replaced with `read_data 4105040.lmp`
 		1. note that `4105040.lmp` is the file we created in the previous tutorial. 
